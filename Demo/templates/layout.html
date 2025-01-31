@@ -32,12 +32,15 @@
           <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
           <div class="menu text-base-content min-h-full w-64 px-4 py-20 fixed shadow-sm" data-theme="light">
             <!-- Sidebar content here -->
-             <img class="w-24 mx-auto mb-4" src="{% static "images/images-removebg-preview.png" %}" alt="">
-            <ul>
-                <li><a href="{% url "index" %}" class="font-medium {% if request.resolver_match.url_name == "index" %} %} active {% endif %}">Home</a></li>
-                <li><a href="{% url "about" %}" class="font-medium {% if request.resolver_match.url_name == "about" %} %} active {% endif %}">About</a></li>
-                <li><a href="{% url "contact" %}" class="font-medium {% if request.resolver_match.url_name == "contact" %} %} active {% endif %}">Contact</a></li>
-                <li><a href="{% url "reports" %}" class="font-medium {% if request.resolver_match.url_name == "reports" %} %} active {% endif %}">Reports</a></li>
+             {% comment %} <img class="w-24 mx-auto mb-4" src="{% static "images/images-removebg-preview.png" %}" alt=""> {% endcomment %}
+             <div class="mx-auto my-5">
+                <img src="{% static "images/slack-logo.svg" %}" alt="">
+             </div>
+             <ul>
+                <li><a href="{% url "index" %}" class="font-medium rounded-none {% if request.resolver_match.url_name == "index" %} %} active {% endif %}">Home</a></li>
+                <li><a href="{% url "about" %}" class="font-medium rounded-none {% if request.resolver_match.url_name == "about" %} %} active {% endif %}">About</a></li>
+                <li><a href="{% url "contact" %}" class="font-medium rounded-none {% if request.resolver_match.url_name == "contact" %} %} active {% endif %}">Contact</a></li>
+                <li><a href="{% url "reports" %}" class="font-medium rounded-none {% if request.resolver_match.url_name == "reports" %} %} active {% endif %}">Reports</a></li>
             </ul>
           </div>
         </div>
