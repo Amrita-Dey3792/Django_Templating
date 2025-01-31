@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html data-theme="cupcake" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header class="z-[1000] fixed left-0 top-0 w-full">
+        {% include "components/navbar.html" %}
+    </header>
+    <div class="drawer lg:drawer-open">
+        <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content relative">
+          <main class="left-0 top-0 min-h-screen py-[100px] lg:ml-[256px] px-3 md:px-8">
+            {% block content %}
+            {% endblock  %}
+          </main>
+        </div>
+        <div class="drawer-side">
+          <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
+          <div class="menu text-base-content min-h-full w-64 px-4 py-20 fixed shadow-sm" data-theme="light">
+            <!-- Sidebar content here -->
+             <img class="w-24 mx-auto mb-4" src="{% static "images/images-removebg-preview.png" %}" alt="">
+            <ul>
+                <li><a href="{% url "index" %}" class="font-medium {% if request.resolver_match.url_name == "index" %} %} active {% endif %}">Home</a></li>
+                <li><a href="{% url "about" %}" class="font-medium {% if request.resolver_match.url_name == "about" %} %} active {% endif %}">About</a></li>
+                <li><a href="{% url "contact" %}" class="font-medium {% if request.resolver_match.url_name == "contact" %} %} active {% endif %}">Contact</a></li>
+                <li><a href="{% url "reports" %}" class="font-medium {% if request.resolver_match.url_name == "reports" %} %} active {% endif %}">Reports</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+    {% include "components/footer.html" %}
+</body>
+</html>

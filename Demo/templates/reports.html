@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section data-theme="light" class="p-8 rounded-xl flex flex-col gap-8">
+    <h3 class="text-2xl font-semibold">Reports</h3>
+    <div class="card border">
+        <div class="card-body items-start">
+          <h2 class="card-title">Monthly Sales Report</h2>
+          <p>Last updated: January 2024</p>
+          <button class="text-blue-500 font-medium">Download PDF</button>
+        </div>
+    </div>
+    <div class="card border">
+        <div class="card-body items-start">
+          <h2 class="card-title">User Activity Analysis</h2>
+          <p>Last updated: January 2024</p>
+          <button class="text-blue-500 font-medium">Download PDF</button>
+        </div>
+    </div>
+    <div class="card border">
+        <div class="card-body items-start">
+          <h2 class="card-title">Performance Metrics</h2>
+          <p>Last updated: January 2024</p>
+          <button class="text-blue-500 font-medium">Download PDF</button>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block title %} Dashboard - Reports {% endblock %}
